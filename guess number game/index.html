@@ -3,22 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Number Guessing Game</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background: #ffffff;
+            width: 100%;
+            max-width: 420px;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #333;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        label {
+            font-weight: 600;
+            color: #555;
+        }
+
+        .guessfield {
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            outline: none;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .guessfield:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+        }
+
+        .subt {
+            margin-top: 10px;
+            padding: 12px;
+            font-size: 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            background: #667eea;
+            color: white;
+            font-weight: 600;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .subt:hover {
+            background: #5a6fdc;
+            transform: translateY(-1px);
+        }
+
+        .subt:active {
+            transform: translateY(0);
+        }
+
+        .resultParas {
+            margin-top: 25px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+            text-align: center;
+        }
+
+        .resultParas p {
+            margin: 8px 0;
+            font-size: 15px;
+            color: #444;
+        }
+
+        .guesesresult {
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .lastResult {
+            font-weight: bold;
+            color: #e53e3e;
+        }
+
+        .lowOrHi {
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
 </head>
-<style>
-    
-</style>
+
 <body>
-    <form class="form">
-        <label for="guess-field" id="guess">Guess a number</label>
-        <input type="text" class="guessfield" id="guessfield">
-        <input type="submit" class="subt" id="subt">Submit Guess
-    </form>
-    <div class="resultParas">
-        <p><span class="guesesresult"></span></p>
-        <p><span class="lastResult">10</span></p>
-        <p class="lowOrHi"></p>
+    <div class="container">
+        <h2>Guess the Number</h2>
+
+        <form class="form">
+            <label for="guessfield" id="guess">Enter your guess</label>
+            <input type="text" class="guessfield" id="guessfield" placeholder="Enter a number">
+            <input type="submit" class="subt" id="subt" value="Submit Guess">
+        </form>
+
+        <div class="resultParas">
+            <p>Previous guesses: <span class="guesesresult"></span></p>
+            <p>Remaining attempts: <span class="lastResult">10</span></p>
+            <p class="lowOrHi"></p>
+        </div>
     </div>
+
+    <script src="script.js"></script>
 </body>
-<script src="script.js"></script>
 </html>

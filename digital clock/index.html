@@ -6,30 +6,49 @@
     <title>Document</title>
 </head>
 <style>
-    body{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: black;
-        color: white;
-    }
-    .container{
-        margin-top: 40vh;
-        display: block;
-        
-    }
-    #clock{
-        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        font-weight: bold;
-        font-size: 20px;
-        background-color: rgb(255, 179, 0);
-        border-radius: 10px;
-        padding: 10px;
-        color: black;
-    }
+        /* Reset */
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
+        body{
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #000000, #1a1a1a);
+            color: white;
+        }
 
-</style>
+        .container{
+            background: rgba(255, 255, 255, 0.08);
+            padding: 30px 40px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            backdrop-filter: blur(10px);
+        }
+
+        #heading{
+            font-size: 18px;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            color: #f1f1f1;
+        }
+
+        #clock{
+            font-size: 32px;
+            font-weight: bold;
+            background: linear-gradient(135deg, #ffb300, #ff8f00);
+            padding: 15px 25px;
+            border-radius: 12px;
+            color: #000;
+            box-shadow: inset 0 0 10px rgba(255,255,255,0.3);
+        }
+    </style>
 <body>
     <div class="container">
         <div id="heading" style="padding: 5px; font-size: 17px;">Local Time:</div>
