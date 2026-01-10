@@ -1,4 +1,3 @@
-const { createElement } = require("react");
 
 let currentPlayer='X';
 let arr=Array(9).fill(null);
@@ -15,18 +14,19 @@ function checkWin(){
         (arr[2] !== null && arr[2] == arr[4] && arr[4] == arr[6])
         
     ){
-        document.write(`${currentPlayer} is win`)
+        document.getElementById("status").innerText = `${currentPlayer} is Win 🎉`;
         return;
     }
 
     if(!arr.some((e)=>e===null)){
-        document.write(`Draw Game !!`)
+        document.getElementById("status").innerText = "Draw Game 🤝";
         return;
     }
 }
 
 function handleClick(el){
     const id=parseInt(el.id);
+    console.log("Ali Raza")
     if(arr[id] !== null) return;
     arr[id]=currentPlayer;
     el.innerText=currentPlayer;
@@ -34,4 +34,16 @@ function handleClick(el){
     currentPlayer=currentPlayer=== 'X' ? 'O' : 'X';
     
     
+}
+
+
+function restartGame() {
+    currentPlayer = 'X';         
+    arr = Array(9).fill(null);  
+    document.getElementById("status").innerText = ""; 
+
+    // board clear
+    document.querySelectorAll(".col").forEach(cell => {
+        cell.innerText = "";
+    });
 }
