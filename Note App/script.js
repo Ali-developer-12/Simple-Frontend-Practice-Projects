@@ -19,7 +19,6 @@ btn.addEventListener('click', ()=>{
     inputBox.setAttribute('contenteditable', 'true');
     img.src = 'img/delete.png';
     notesContainer.appendChild(inputBox).appendChild(img);
-    console.log('ali Raza Khan');
     
 });
 
